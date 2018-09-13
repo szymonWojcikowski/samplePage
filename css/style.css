@@ -1,0 +1,595 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+}
+
+/* Coolors Exported Palette - coolors.co/f15025-7b0d1e-020202-023618-005c69 */
+
+
+
+/* RGB */
+/*$color1: rgba(241, 80, 37, 1);*/
+/*$color2: rgba(123, 13, 30, 1);*/
+/*$color3: rgba(2, 2, 2, 1);*/
+/*$color4: rgba(2, 54, 24, 1);*/
+/*$color5: rgba(0, 92, 105, 1);*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Righteous', Arial, Tahoma, sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+sup {
+    font-size: .8rem;
+    vertical-align: super;
+}
+
+.flex {
+    display: flex;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.color--alt {
+    color: #F15025;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0 20px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #F15025;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: 0 solid #F15025;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 1px 0 1px rgba(0, 0, 0, .8), -1px 0 1px rgba(0, 0, 0, .8);
+}
+
+section {
+    padding: 40px 0 20px;
+}
+
+.section-titles {
+    width: 40%;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/*------header& nav > .menu-------*/
+
+header + section {
+    margin-top: 40px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+header .flex h1, header .flex nav {
+    flex-basis: 50%;
+}
+
+.menu {
+    background-color: #000000;
+}
+
+.menu.flex li {
+    display: flex;
+    flex-basis: calc(100% / 3);
+    justify-content: flex-end;
+    position: relative;
+}
+
+.menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.dropdown {
+    border-top: 10px solid transparent;
+    position: absolute;
+    z-index: -1;
+    top: calc(-100% - 80px);
+    transition: top .4s;
+}
+
+.dropdown > li {
+    background-color: #000000;
+    padding: 2px 15px;
+    line-height: 20px;
+}
+
+.dropdown a {
+    text-transform: initial;
+    font-weight: 400;
+}
+
+.dropdown li:first-child:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 8px solid black;
+}
+
+.menu li:hover > .dropdown {
+    top: 100%;
+    transition: top .4s;
+}
+
+ul {
+    list-style: none;
+}
+
+/*------section .slider-------*/
+
+
+.slider {
+}
+
+.slider input {
+    visibility: hidden;
+}
+
+.slide-select {
+    width: 0;
+    height: 0;
+}
+
+.slide-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.next, .prev {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    height: 100%;
+    line-height: 400px;
+    font-size: 3rem;
+    color: #F15025;
+    cursor: pointer;
+    text-align: center;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.next:hover, .prev:hover {
+    text-shadow: 1px 0 1px rgba(0, 0, 0, .8), -1px 0 1px rgba(0, 0, 0, .8);
+}
+
+input[type="radio"] + .slide {
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+input[type="radio"]:checked + .slide {
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+
+.slide-layer {
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    right: 10%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    text-align: center;
+}
+
+.slide-layer p {
+    margin: 15px 0;
+}
+
+.slide-title {
+    font-size: 2.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.slide-title span {
+    font-weight: 700;
+}
+
+/*------section .products-------*/
+.products {
+    margin-bottom: 45px;
+}
+
+.products .flex {
+    justify-content: space-around;
+}
+
+.products figure {
+    position: relative;
+    flex: 1 0 calc(100% / 3 - 120px);
+    display: flex;
+    flex-flow: row wrap;
+    overflow: hidden;
+}
+
+.products figure img {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-width: 200px;
+    height: auto;
+}
+
+.products figure figcaption {
+    position: absolute;
+    bottom: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.text-on-hover {
+    height: 0;
+    padding: 0;
+    opacity: 0;
+    -webkit-transition: height .6s, opacity .4s, padding .4s;
+    transition: height .6s, opacity .4s, padding .4s;
+}
+
+.text-on-hover > * {
+    display: none;
+}
+
+.text-on-hover h2 {
+    padding-left: 20px;
+    font-size: 1.1rem;
+    font-weight: 100;
+}
+
+.products figure figcaption:hover {
+    width: 100%;
+    bottom: 0;
+    top: 0;
+}
+
+.products figure figcaption:hover .text-on-hover {
+    height: 100%;
+    opacity: 1;
+    padding: 15px 15px 20px;
+    -webkit-transition: height .6s, opacity .4s, padding .4s;
+    transition: height .6s, opacity .4s, padding .4s;
+}
+
+.products figure figcaption:hover .text-on-hover > * {
+    display: block;
+}
+
+.products figure figcaption h1 {
+    margin: 15px 20px 15px;
+}
+
+.products figure figcaption:hover > h1 {
+    margin-top: 10px;
+}
+
+.prod-name {
+    text-transform: uppercase;
+}
+
+.box {
+    flex: 1 0 calc(100% / 3 - 120px);
+    border: 1px solid #DADADA;
+    border-radius: 1px;
+    margin: 0 20px;
+}
+
+.box h1 {
+    margin: 40px 20px 15px;
+}
+
+.box p {
+    margin: 15px 20px;
+}
+
+/*------section .plan-select-------*/
+
+.plan-select {
+    background-color: #E4E4E4;
+    min-height: 500px;
+}
+
+.plan-select h1 {
+    padding-left: 20px;
+    font-weight: 400;
+}
+
+.plan-select input[type="radio"] {
+    visibility: hidden;
+}
+
+.plan-select .flex {
+    justify-content: space-around;
+}
+
+.plan-select .flex > li {
+    /*flex: 1 0 calc(100% / 3 - 120px);*/
+    width: 100%;
+    align-items: stretch;
+    padding: 10px 20px;
+}
+
+input[type="radio"]:checked + .card {
+    background-color: #005C69;
+}
+
+input[type="radio"]:checked + .card:before {
+    background-color: #FFFFFF;
+    border: 8px solid #005C69;
+    box-shadow: 0 0 0 1px #FFFFFF;
+}
+
+input[type="radio"]:checked + .card h3 {
+    color: #FFFFFF;
+}
+
+input[type="radio"]:checked + .card .circle {
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+input[type="radio"]:checked + .card label {
+    background-color: #FFFFFF;
+    color: #005C69;
+}
+
+.card {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-around;
+    height: 100%;
+    position: relative;
+    padding-bottom: 3rem;
+    border: 1px solid #020202;
+    background-color: #FFFFFF;
+}
+
+.card:before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    margin-left: -16px;
+    background-color: #020202;
+    border: 8px solid #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #020202;
+}
+
+.card h3 {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.offer {
+    width: 100%;
+    margin-top: 15px;
+    background-color: #CCC;
+}
+
+.offer > li {
+    padding: 5px 20px;
+    text-align-last: center;
+}
+
+.offer li:nth-child(even) {
+    background-color: #F1F1F1;
+}
+
+.offer li:nth-child(odd) {
+    background-color: #E4E4E4;
+}
+
+.card label {
+    /*--align-self: flex-end; to nie zadziała, bo jest ustawiony flex-direction na column--*/
+    position: absolute;
+    margin: 20px auto 0;
+    bottom: 10px;
+    left: 30%;
+    right: 30%;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    line-height: 20px;
+    padding: 13px;
+    margin: 5px auto 0;
+    border: 1px solid #F15025;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.currency {
+    text-transform: uppercase;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/*------section .contact-form-------*/
+
+.contact-form fieldset {
+    padding: 0 20px;
+}
+
+.contact-form .wrapper .flex {
+    width: 100%;
+    display: flex;
+}
+
+.form-data {
+    flex: 2 0 66%;
+    display: flex;
+    flex-flow: column wrap;
+}
+.form-check-and-submit {
+    flex: 1 0 33%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+    margin-bottom: 15px;
+    padding: 4px 8px;
+    border: 1px solid #A6E3D3;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    color: #F15025;
+    cursor: cell;
+}
+
+.contact-form input[type="submit"] {
+    cursor: pointer;
+    align-self: stretch;
+    margin-left: 36px;
+}
+
+.contact-form input[type="checkbox"] {
+    height: 0;
+    visibility: hidden;
+}
+
+.checkbox-holder {
+    position: relative;
+    padding-left: 30px;
+}
+
+.contact-form input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 48px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    left: 32px;
+    border: 1px ridge #CECECE;
+}
+
+.contact-form input[type="checkbox"]:checked + label:before {
+    content: "\2713";
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    left: 32px;
+    width: 48px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 40px;
+    /*font-family: Tahoma;*/
+    text-align: center;
+    color: #FFFFFF;
+    border: 1px ridge #CECECE;
+    background: #005C69;
+}
+
+.contact-form label {
+    display: inline-block;
+    padding-left: 30px;
+    float: left;
+    cursor: pointer;
+}
+
+.contact-form label[for="checkbox"] {
+    margin: 30px 0;
+    padding-left: 66px;
+    font-size: 1rem;
+    color: #C4C4C4;
+}
+
+textarea {
+    resize: none;
+}
+
+input::placeholder, textarea::placeholder {
+    padding-left: 5px;
+    font-family: 'Righteous', Arial, Tahoma, sans-serif;
+    font-weight: 100;
+    color: #DEDEDE;
+}
+
+/*------footer-------*/
+
+footer .flex {
+    align-items: center;
+}
+
+footer .copy {
+    flex: 4;
+    color: #C4C4C4;
+}
+
+footer .socials {
+    flex: 1;
+}
+
+footer h4 {
+    flex: 1;
+    text-transform: uppercase;
+}
+
+footer .socials li {
+    display: inline-block;
+}
